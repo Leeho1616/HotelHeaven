@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="'Room ' + ${roomId} + ' Details'">Room Detail - Hotel Heaven</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+    <header>
+		<img src="/images/logo/logo.webp" alt="Hotel Heaven Logo" class="logo">
+        <h1 th:text="'Room ' + ${roomId} + ' Details'">Room Details</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a th:href="@{/}">ホームページ</a></li>
+            <li><a th:href="@{/rooms}">部屋</a></li>
+            <li><a th:href="@{/pricing}">システム</a></li>
+            <li><a th:href="@{/booking}">予約</a></li>
+            <li><a th:href="@{/services}">サービス</a></li>
+            <li><a th:href="@{/contact}">連絡</a></li>
+            <li><a th:href="@{/faq}">よく質問</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h2 th:text="'Room ' + ${roomId}">Room Details</h2>
+            <img th:src="@{'/images/room/' + ${roomType} + '/' + ${roomId} + '.webp'}" alt="Room Image">
+            <p th:text="${roomDescription}">Room Description</p>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 ラブホテル. All rights reserved.</p>
+    </footer>
+</body>
+</html>

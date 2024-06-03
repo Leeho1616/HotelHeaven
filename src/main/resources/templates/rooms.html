@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Rooms - Hotel Heaven</title>
+    <link rel="stylesheet" href="/css/rooms.css">
+</head>
+<body>
+    <header>
+		<img src="/images/logo/logo.webp" alt="Hotel Heaven Logo" class="logo">
+        <h1>Our Rooms</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a th:href="@{/}">ホームページ</a></li>          
+            <li><a th:href="@{/pricing}">システム</a></li>
+            <li><a th:href="@{/booking}">予約</a></li>
+            <li><a th:href="@{/services}">サービス</a></li>
+            <li><a th:href="@{/contact}">連絡</a></li>
+            <li><a th:href="@{/faq}">よく質問</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="room-category">
+            <h2>タイプ A - 高級</h2>
+            <p>究極の贅沢と快適さを提供するタイプ A のお部屋。</p>
+            <div class="room-gallery">
+                <a th:href="@{/roomDetail(id='A1')}"><img src="/images/Room/A/A1.webp" alt="Room A1"></a>
+        		<a th:href="@{/roomDetail(id='A2')}"><img src="/images/Room/A/A2.webp" alt="Room A2"></a>
+        		<a th:href="@{/roomDetail(id='A3')}"><img src="/images/Room/A/A3.webp" alt="Room A3"></a>
+        		<a th:href="@{/roomDetail(id='A4')}"><img src="/images/Room/A/A4.webp" alt="Room A4"></a>
+            </div>
+        </section>
+        <section class="room-category">
+            <h2>タイプ B - 快適</h2>
+            <p>快適さとスタイルを兼ね備えたタイプ B のお部屋。</p>
+            <div class="room-gallery">
+                <a th:href="@{/roomDetail(id='B1')}"><img src="/images/Room/B/B1.webp" alt="Room B1"></a>
+        		<a th:href="@{/roomDetail(id='B2')}"><img src="/images/Room/B/B2.webp" alt="Room B2"></a>
+        		<a th:href="@{/roomDetail(id='B3')}"><img src="/images/Room/B/B3.webp" alt="Room B3"></a>
+        		<a th:href="@{/roomDetail(id='B4')}"><img src="/images/Room/B/B4.webp" alt="Room B4"></a>
+            </div>
+        </section>
+        <section class="room-category">
+            <h2>タイプ C - シンプル</h2>
+            <p>基本的な快適さを提供するタイプ C のお部屋。</p>
+            <div class="room-gallery">
+                <a th:href="@{/roomDetail(id='C1')}"><img src="/images/Room/C/C1.webp" alt="Room C1"></a>
+        		<a th:href="@{/roomDetail(id='C3')}"><img src="/images/Room/C/C3.webp" alt="Room C3"></a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 ラブホテル. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>よくある質問 - Hotel Heaven</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <script th:src="@{/js/contact.js}"></script>
+</head>
+<body>
+    <header>
+        <img src="/images/logo/logo.webp" alt="Hotel Heaven Logo" class="logo">
+        <h1>よくある質問</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a th:href="@{/}">ホームページ</a></li>
+            <li><a th:href="@{/rooms}">部屋</a></li>
+            <li><a th:href="@{/pricing}">システム</a></li>
+            <li><a th:href="@{/booking}">予約</a></li>
+            <li><a th:href="@{/services}">サービス</a></li>
+            <li><a th:href="@{/contact}">連絡</a></li>            
+        </ul>
+    </nav>
+    <main>
+        <section class="faq">
+            <h2>よくある質問</h2>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer('answer1')">
+                    ネット環境はありますか？ <span class="toggle-symbol">+</span>
+                </div>
+                <div id="answer1" class="faq-answer hidden">
+                    全店舗フリーWi-Fiをご利用できます。
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer('answer2')">
+                    滞在中は外出ができますか？ <span class="toggle-symbol">+</span>
+                </div>
+                <div id="answer2" class="faq-answer hidden">
+                    外出可能です。<br>
+                    外出をされる際にはフロントにて「お部屋番号」をお伝えください。<br>
+                    ※追加料金が発生している場合は、先にご精算をしていただきます。
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer('answer3')">
+                    先に1人でチェックインして、後から連れが合流することは可能ですか？ <span class="toggle-symbol">+</span>
+                </div>
+                <div id="answer3" class="faq-answer hidden">
+                    可能です。<br>
+                    後からいらっしゃるお客様は、フロントにて「お部屋番号」をお伝え下さい。
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer('answer4')">
+                    1人でも利用できますか？ <span class="toggle-symbol">+</span>
+                </div>
+                <div id="answer4" class="faq-answer hidden">
+                    もちろん可能です。<br>
+                    男性お1人、女性お1人、多数の皆様にご利用していただいております。<br>
+                    料金に関しては各店舗サイトをご覧ください。
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer('answer5')">
+                    2人以上で利用する事は可能ですか？ <span class="toggle-symbol">+</span>
+                </div>
+                <div id="answer5" class="faq-answer hidden">
+                    可能です。<br>
+                    料金に関しては各店舗サイトをご覧ください。
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer('answer6')">
+                    食べものなどを持ち込んでも大丈夫ですか？ <span class="toggle-symbol">+</span>
+                </div>
+                <div id="answer6" class="faq-answer hidden">
+                    持ち込み可能です。
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer('answer7')">
+                    外部のデリバリーサービスを利用することはできますか？ <span class="toggle-symbol">+</span>
+                </div>
+                <div id="answer7" class="faq-answer hidden">
+                    可能です。<br>
+                    尚、外部デリバリーサービスを利用したご注文によるトラブルに関して、当ホテルは一切の責任を負いかねますので、自己責任でご注文してください。
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 ラブホテル. All rights reserved.</p>
+    </footer>
+</body>
+</html>

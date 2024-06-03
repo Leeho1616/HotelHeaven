@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サービス - Hotel Heaven</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+    <header>
+        <img src="/images/logo/logo.webp" alt="Hotel Heaven Logo" class="logo">
+        <h1>サービス</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a th:href="@{/}">ホームページ</a></li>
+            <li><a th:href="@{/rooms}">部屋</a></li>
+            <li><a th:href="@{/pricing}">システム</a></li>
+            <li><a th:href="@{/booking}">予約</a></li>
+            <li><a th:href="@{/contact}">連絡</a></li>
+            <li><a th:href="@{/faq}">よく質問</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="services-intro">
+            <h2>ホテルで提供されるサービス</h2>
+            <p>ホテルヘブンでは、次のサービスをご利用いただけます。</p>
+        </section>
+        <section class="services-grid">
+            <div class="service-item">
+                <img src="/images/service/wifi.webp" alt="WiFi">
+                <p>無料WiFi</p>
+            </div>
+            <div class="service-item">
+                <img src="/images/service/shampoo.webp" alt="Shampoo">
+                <p>多種類のシャンプー、ボディソープ、スキンケア製品</p>
+            </div>
+            <div class="service-item">
+                <img src="/images/service/bluetooth.webp" alt="Bluetooth Music">
+                <p>ブルートゥースで好きな音楽を調整可能</p>
+            </div>
+            <div class="service-item">
+                <img src="/images/service/tv.webp" alt="Large TV">
+                <p>大型テレビ</p>
+            </div>
+            <div class="service-item">
+                <img src="/images/service/vod.webp" alt="VOD">
+                <p>VOD</p>
+            </div>
+            <div class="service-item">
+                <img src="/images/service/microwave.webp" alt="Microwave">
+                <p>電子レンジ</p>
+            </div>
+            <div class="service-item">
+                <img src="/images/service/bringin.webp" alt="Bring In">
+                <p>持ち込み</p>
+            </div>
+            
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 ラブホテル. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>システム - Hotel Heaven</title>
+    <link rel="stylesheet" th:href="@{/css/system.css}">
+    <script th:src="@{/js/system.js}"></script>
+</head>
+<body>
+    <header>
+        <img src="/images/logo/logo.webp" alt="Hotel Heaven Logo" class="logo">
+        <h1>システム</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a th:href="@{/}">ホームページ</a></li>
+            <li><a th:href="@{/rooms}">部屋</a></li>
+            <li><a th:href="@{/booking}">予約</a></li>
+            <li><a th:href="@{/services}">サービス</a></li>
+            <li><a th:href="@{/contact}">連絡</a></li>
+            <li><a th:href="@{/faq}">よく質問</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="room-category">
+            <h2>タイプ A - 高級</h2>
+            <img src="/images/Room/A/A1.webp" alt="Room A1" class="room-image">
+            <div class="details">
+                <span class="details-toggle" onclick="toggleDetails('detailsA')">詳細 +</span>
+                <div id="detailsA" class="pricing-details hidden">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>項目</th>
+                                <th>平日</th>
+                                <th>金	&#9679;土	&#9679;日	&#9679;礼日</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>休憩3H</td>
+                                <td>¥6000</td>
+                                <td>¥7000</td>
+                            </tr>
+                            <tr>
+                                <td>休憩5H</td>
+                                <td>¥9000</td>
+                                <td>¥10000</td>
+                            </tr>
+                            <tr>
+                                <td>宿泊 <br>(20-11H)</td>
+                                <td>¥15000</td>
+                                <td>¥18000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <section class="room-category">
+            <h2>タイプ B - 快適</h2>
+            <img src="/images/Room/B/B1.webp" alt="Room B1" class="room-image">
+            <div class="details">
+                <span class="details-toggle" onclick="toggleDetails('detailsB')">詳細 +</span>
+                <div id="detailsB" class="pricing-details hidden">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>項目</th>
+                                <th>平日</th>
+                                <th>金	&#9679;土	&#9679;日	&#9679;礼日</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>休憩3H</td>
+                                <td>¥5000</td>
+                                <td>¥6000</td>
+                            </tr>
+                            <tr>
+                                <td>休憩5H</td>
+                                <td>¥7000</td>
+                                <td>¥8000</td>
+                            </tr>
+                            <tr>
+                                <td>宿泊 <br>(20-11H)</td>
+                                <td>¥12000</td>
+                                <td>¥14000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <section class="room-category">
+            <h2>タイプ C - シンプル</h2>
+            <img src="/images/Room/C/C1.webp" alt="Room C1" class="room-image">
+            <div class="details">
+                <span class="details-toggle" onclick="toggleDetails('detailsC')">詳細 +</span>
+                <div id="detailsC" class="pricing-details hidden">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>項目</th>
+                                <th>平日</th>
+                                <th>金	&#9679;土	&#9679;日	&#9679;礼日</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>休憩3H</td>
+                                <td>¥4000</td>
+                                <td>¥5000</td>
+                            </tr>
+                            <tr>
+                                <td>休憩5H</td>
+                                <td>¥6000</td>
+                                <td>¥7000</td>
+                            </tr>
+                            <tr>
+                                <td>宿泊 <br>(20-11H)</td>
+                                <td>¥10000</td>
+                                <td>¥12000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 ラブホテル. All rights reserved.</p>
+    </footer>
+</body>
+</html>
