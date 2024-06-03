@@ -25,59 +25,61 @@
     <main>
         <section class="booking-form">
             <h2>予約フォーム</h2>
-            <form th:action="@{/booking}" th:object="${bookingModel}" method="post">
+            <form th:action="@{/booking/confirm}" th:object="${bookingModel}" method="post" id="bookingForm">
                 <div class="form-group">
                     <label for="roomType">部屋タイプ:</label>
                     <select id="roomType" th:field="*{roomType}">
+                        <option value="">選択してください</option>
                         <option value="A">A - 高級</option>
                         <option value="B">B - 快適</option>
                         <option value="C">C - シンプル</option>
                     </select>
-                    <div th:if="${#fields.hasErrors('roomType')}" th:errors="*{roomType}" class="error"></div>
+                    <div class="error" id="roomTypeError"></div>
                 </div>
                 <div class="form-group">
                     <label for="stayType">タイプ:</label>
                     <select id="stayType" th:field="*{stayType}">
+                        <option value="">選択してください</option>
                         <option value="休憩3H">休憩3H</option>
                         <option value="休憩5H">休憩5H</option>
                         <option value="宿泊">宿泊</option>
                     </select>
-                    <div th:if="${#fields.hasErrors('stayType')}" th:errors="*{stayType}" class="error"></div>
+                    <div class="error" id="stayTypeError"></div>
                 </div>
                 <div class="form-group">
                     <label for="checkInDate">チェックイン日:</label>
                     <input type="date" id="checkInDate" th:field="*{checkInDate}" required>
-                    <div th:if="${#fields.hasErrors('checkInDate')}" th:errors="*{checkInDate}" class="error"></div>
+                    <div class="error" id="checkInDateError"></div>
                 </div>
                 <div class="form-group">
                     <label for="checkInTime">チェックイン時間:</label>
                     <input type="time" id="checkInTime" th:field="*{checkInTime}" required>
-                    <div th:if="${#fields.hasErrors('checkInTime')}" th:errors="*{checkInTime}" class="error"></div>
+                    <div class="error" id="checkInTimeError"></div>
                 </div>
                 <div class="form-group">
                     <label for="numAdults">大人の人数:</label>
                     <input type="number" id="numAdults" th:field="*{numAdults}" min="1" required>
-                    <div th:if="${#fields.hasErrors('numAdults')}" th:errors="*{numAdults}" class="error"></div>
+                    <div class="error" id="numAdultsError"></div>
                 </div>
                 <div class="form-group">
                     <label for="numChildren">子供の人数:</label>
                     <input type="number" id="numChildren" th:field="*{numChildren}" min="0">
-                    <div th:if="${#fields.hasErrors('numChildren')}" th:errors="*{numChildren}" class="error"></div>
+                    <div class="error" id="numChildrenError"></div>
                 </div>
                 <div class="form-group">
                     <label for="fullName">お名前:</label>
                     <input type="text" id="fullName" th:field="*{fullName}" required>
-                    <div th:if="${#fields.hasErrors('fullName')}" th:errors="*{fullName}" class="error"></div>
+                    <div class="error" id="fullNameError"></div>
                 </div>
                 <div class="form-group">
                     <label for="phoneNumber">電話番号:</label>
                     <input type="tel" id="phoneNumber" th:field="*{phoneNumber}" required>
-                    <div th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}" class="error"></div>
+                    <div class="error" id="phoneNumberError"></div>
                 </div>
                 <div class="form-group">
                     <label for="email">メール:</label>
                     <input type="email" id="email" th:field="*{email}" required>
-                    <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="error"></div>
+                    <div class="error" id="emailError"></div>
                 </div>
                 <div class="form-group">
                     <label for="requests">ホテルへの希望:</label>
@@ -86,9 +88,6 @@
                 <button type="submit">予約</button>
             </form>
         </section>
-        <div th:if="${message}" class="success-message">
-            <p th:text="${message}"></p>
-        </div>
     </main>
     <footer>
         <p>© 2024 ラブホテル. All rights reserved.</p>

@@ -10,6 +10,7 @@ import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+
 public class BookingModel {
     private Long id;
 

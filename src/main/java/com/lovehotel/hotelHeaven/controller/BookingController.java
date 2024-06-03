@@ -8,7 +8,9 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.lovehotel.hotelHeaven.model.BookingModel;
 import com.lovehotel.hotelHeaven.service.BookingService;
@@ -26,13 +28,22 @@ public class BookingController {
         return "booking";
     }
 
-    @PostMapping
-    public String submitBooking(@Valid BookingModel bookingModel, BindingResult bindingResult, Model model) {
+    @PostMapping("/confirm")
+    public String confirmBooking(@Valid BookingModel bookingModel, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
             return "booking";
         }
+        model.addAttribute("bookingModel", bookingModel);
+        return "confirmBooking";
+    }
+
+    @PostMapping("/submit")
+    @ResponseBody
+    public String submitBooking(@Valid @RequestBody BookingModel bookingModel, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return "There was an error with your submission.";
+        }
         bookingService.createBooking(bookingModel);
-        model.addAttribute("message", "予約が完了しました。");
-        return "booking";
+        return "予約が成功しました。";
     }
 }

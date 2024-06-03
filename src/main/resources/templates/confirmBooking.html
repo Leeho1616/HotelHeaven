@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>予約確認 - Hotel Heaven</title>
+    <link rel="stylesheet" th:href="@{/css/confirmBooking.css}">
+    <script th:src="@{/js/confirmBooking.js}" defer></script>
+</head>
+<body>
+    <header>
+        <img src="/images/logo/logo.webp" alt="Hotel Heaven Logo" class="logo">
+        <h1>予約確認</h1>
+    </header>
+    <main>
+        <section class="confirmation-form">
+            <h2>予約内容確認</h2>
+            <p>以下の内容でよろしいですか？</p>
+            <div>
+                <label>部屋タイプ: </label><span th:text="${bookingModel.roomType}"></span>
+            </div>
+            <div>
+                <label>タイプ: </label><span th:text="${bookingModel.stayType}"></span>
+            </div>
+            <div>
+                <label>チェックイン日: </label><span th:text="${bookingModel.checkInDate}"></span>
+            </div>
+            <div>
+                <label>チェックイン時間: </label><span th:text="${bookingModel.checkInTime}"></span>
+            </div>
+            <div>
+                <label>大人の人数: </label><span th:text="${bookingModel.numAdults}"></span>
+            </div>
+            <div>
+                <label>子供の人数: </label><span th:text="${bookingModel.numChildren}"></span>
+            </div>
+            <div>
+                <label>お名前: </label><span th:text="${bookingModel.fullName}"></span>
+            </div>
+            <div>
+                <label>電話番号: </label><span th:text="${bookingModel.phoneNumber}"></span>
+            </div>
+            <div>
+                <label>メール: </label><span th:text="${bookingModel.email}"></span>
+            </div>
+            <div>
+                <label>ホテルへの希望: </label><span th:text="${bookingModel.requests}"></span>
+            </div>
+            
+            <form th:action="@{/booking}" method="get">
+                <button type="submit">戻る</button>
+            </form>
+            <form id="confirmForm" th:action="@{/booking/submit}" method="post">
+                <input type="hidden" name="roomType" th:value="${bookingModel.roomType}">
+                <input type="hidden" name="stayType" th:value="${bookingModel.stayType}">
+                <input type="hidden" name="checkInDate" th:value="${bookingModel.checkInDate}">
+                <input type="hidden" name="checkInTime" th:value="${bookingModel.checkInTime}">
+                <input type="hidden" name="numAdults" th:value="${bookingModel.numAdults}">
+                <input type="hidden" name="numChildren" th:value="${bookingModel.numChildren}">
+                <input type="hidden" name="fullName" th:value="${bookingModel.fullName}">
+                <input type="hidden" name="phoneNumber" th:value="${bookingModel.phoneNumber}">
+                <input type="hidden" name="email" th:value="${bookingModel.email}">
+                <input type="hidden" name="requests" th:value="${bookingModel.requests}">
+                <button type="button" id="confirmButton">予約</button>
+            </form>
+        </section>
+    </main>
+    <div id="successPopup" class="popup">
+        <div class="popup-content">
+            <p id="successMessage"></p>
+            <button id="closePopup">閉じる</button>
+        </div>
+    </div>
+</body>
+</html>
